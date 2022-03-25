@@ -6,6 +6,7 @@ import androidx.lifecycle.*
 import timber.log.Timber
 
 class DessertTimer(lifecycle: Lifecycle) : LifecycleEventObserver{
+
     var secondsCount = 0
     private var handler = Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
@@ -19,7 +20,6 @@ class DessertTimer(lifecycle: Lifecycle) : LifecycleEventObserver{
         Lifecycle.Event.ON_STOP -> stopTimer()
         else -> {Timber.i("Event${event.name}encountered")}
     }
-
 
     private fun startTimer() {
         runnable = Runnable {
